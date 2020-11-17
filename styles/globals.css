@@ -14,3 +14,54 @@ a {
 * {
   box-sizing: border-box;
 }
+.paging-table{
+  display: block;
+  width: 80vw;
+  margin: 20vh auto 2vh;
+}
+.paging-table table{
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid grey;
+  background-color: #fffff3;
+}
+
+
+.paging-table td,.paging-table tr{
+  border: 1px solid grey;
+}
+.flllex{
+  display: inline-flex;
+  width: 60vw;
+  justify-content: space-between;
+}
+.heh{
+  display: block;
+  text-align: center;
+}
+.img-zone{
+  position: relative;
+  display: block;
+  text-align: center;
+}
+.img-zone img{
+  margin-top: 60px;
+  margin-bottom: -100px;
+  background-color: white;
+  width: 300px;
+  height: 300px;
+  display: inline-block;
+}
+.page-button{
+  display: block;
+  text-align: center;
+}
+.page-button ul{
+  list-style: none;
+  display: inline-flex;
+}
+.page-button li{
+  width: 20px;
+  height: 20px;
+}
