@@ -4,7 +4,7 @@ import PostCard from "../components/scrollingCard";
 import Link from "next/link";
 
 const Scrolling=()=>{
-    const [posts,setPosts]=useState(dummyDataScrolling(8))
+    const [posts,setPosts]=useState(dummyDataScrolling(10))
     const [countE,setCountE]=useState(1)
     const [more,setMore]=useState(true)
     useEffect(()=>{
@@ -18,7 +18,7 @@ const Scrolling=()=>{
         }
         window.addEventListener('scroll', onScroll);
         console.log(countE)
-        if(15<countE){
+        if(18<countE){
             console.log('will be')
             setMore(false)
         }
