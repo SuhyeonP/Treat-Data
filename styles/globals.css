@@ -1,3 +1,13 @@
+@media (max-width: 800px){
+  body{
+    display: none;
+  }
+}
+
+ul,li{
+  list-style: none;
+}
+
 html,
 body {
   padding: 0;
@@ -13,7 +23,11 @@ a {
 
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
+
+
 .paging-table{
   display: block;
   width: 80vw;
@@ -58,7 +72,6 @@ a {
   text-align: center;
 }
 .page-button ul{
-  list-style: none;
   display: inline-flex;
 }
 
@@ -68,4 +81,45 @@ a {
 }
 .now-btn{
   background-color: #92A8D1;
+}
+.the-body{
+  width: 80vw;
+  height: 80vh;
+  margin: 0 auto;
+  display: table;
+}
+.the-body>div{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.main-list{
+  padding: 20px 0;
+}
+.main-list>li {
+  padding: 7px 0;
+}
+.scrolling-list{
+  padding: 25px 20px;
+}
+.album-table{
+  width: 80vh;
+  margin: 6vh auto 2vh;
+  display: block;
+}
+.goback-login{
+  border:0;
+  background: #0000ff30;
+  padding: 3px;
+  border-radius: 3px;
+}
+.temp-login{
+  display: block;
+  text-align: center;
+  width: 50vw;
+  margin: 20px auto;
+}
+.input-form{
+  display: flex;
+  justify-content: space-between;
 }

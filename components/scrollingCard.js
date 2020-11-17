@@ -4,7 +4,7 @@ const PostCard=({post,ind})=>{
 
     return (
         <>
-            <li>
+            <li className="scrolling-list">
                 <p>{ind+1}</p>
                 <p>{post.firstName}</p>
                 <p>{post.content}</p>

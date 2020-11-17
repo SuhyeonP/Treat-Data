@@ -1,6 +1,6 @@
 import React,{useEffect,useCallback,useRef,useState,useMemo} from 'react';
 import axios from 'axios'
-import Link from "next/link";
+import HeadLink from '../components/headMenu'
 import PagingTable from "../components/pagingTable";
 import PgButton from "../components/pgbtn";
 const Paging=()=>{
@@ -64,13 +64,7 @@ const Paging=()=>{
 
     return (
        <>
-           <div className="heh">
-               <div className="flllex">
-                   <Link href="/"><a>Home</a></Link>
-                   <br/>
-                   <Link href="/scrolling"><a>scrolling</a></Link>
-               </div>
-           </div>
+           <HeadLink/>
            <div className="img-zone">
                <img src="https://i.stack.imgur.com/DAwB5.png" id="selectImg"/>
            </div>
