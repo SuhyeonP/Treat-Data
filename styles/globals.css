@@ -61,7 +61,11 @@ a {
   list-style: none;
   display: inline-flex;
 }
-.page-button li{
-  width: 20px;
-  height: 20px;
+
+.page-button li {
+  width: 25px;
+  height: 25px;
+}
+.now-btn{
+  background-color: #92A8D1;
 }

@@ -9,26 +9,32 @@ const Paging=()=>{
 
 
     const [total,setTotal]=useState(0)
+    const [currentI,setCurrentI]=useState(0)
     const [currentPage,setCurrentPage]=useState(1)
     const [goF,setGoF]=useState(false)
     const [goB,setGoB]=useState(true)
-
 
     useEffect(()=>{
         const hi=async()=>{
             setTft(true)
             const res=await axios.get("http://api.honeyhyoni.shop/album")
-            setPost(res.data.slice(0,3))
+            setPost(res.data.slice(currentI,currentPage*3))
+            console.log(post)
             setTft(false)
             setTotal(Math.ceil(res.data.length/3))
         }
         hi();
-    },[])
+    },[currentPage])
 
-    console.log(total)
     if(tft){
         return (<p>just a moment</p>)
     }
+    const goToP=(num)=>(
+        console.log(Number(num*3+1)),
+        setCurrentPage(num),
+        setCurrentI(Number(num*3+1))
+    )
+
 
     return (
        <>
@@ -62,7 +68,7 @@ const Paging=()=>{
            <div className="page-button">
                <ul>
                    {goF?<li>◁</li>:null}
-                   <PgButton numb={total} current={currentPage}/>
+                   <PgButton numb={total} goToP={goToP} setCurrentPage={setCurrentPage} current={currentPage}/>
                    {goB?<li>▷</li>:null}
                </ul>
            </div>

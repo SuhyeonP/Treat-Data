@@ -5,7 +5,6 @@ const PagingTable=({album})=>{
 
     const showImage=()=>{
         const id=document.getElementById('selectImg')
-        console.log("Asdf",id.src)
         id.src=''
         id.src=album.img
     }

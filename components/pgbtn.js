@@ -1,15 +1,25 @@
-const PgButton=({numb,current})=>{
-    const arr=[];
+import React, {useCallback,useEffect,useState} from 'react'
+
+const PgButton=({numb,current,setCurrentPage,goToP})=>{
+    const pageArr=[]
     for(let i=current;i<=numb;i++){
-        arr.push(i)
+        pageArr.push(i)
     }
+
+
     return (
         <>
-            {arr.map((ele)=>{
-                return <li key={ele.id}>{ele}</li>
+            {pageArr.map((ele)=>{
+                if(ele===current){
+                    return <li key={ele.id} className="now-btn">{ele}</li>
+                }else{
+                    return <li key={ele.id}  onClick={()=>goToP(ele)} >{ele}</li>
+                }
             })}
         </>
     )
+
+
 
 }
 
