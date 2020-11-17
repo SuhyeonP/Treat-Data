@@ -30,7 +30,6 @@ const Scrolling=()=>{
 
     return (
         <>
-            <Link to="/usingScrolling">응용한것!</Link>
             <ul>
                 {more?posts.map((post,ind)=>(<PostCard key={post.id} ind={ind} post={post}/>))
                     :
