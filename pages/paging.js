@@ -8,22 +8,28 @@ const Paging=()=>{
     const [tft,setTft]=useState(false)
 
 
-    const [total,setTotal]=useState(0)
+    const [total,setTotal]=useState(3)
     const [currentI,setCurrentI]=useState(0)
     const [currentPage,setCurrentPage]=useState(1)
     const [goF,setGoF]=useState(false)
     const [goB,setGoB]=useState(true)
-
+    const [after,setAfter]=useState(0)
     useEffect(()=>{
         const hi=async()=>{
             setTft(true)
             const res=await axios.get("http://api.honeyhyoni.shop/album")
-            const post3data=res.data.slice(currentI,currentI+3)
-            console.log(post3data)
-            console.log(currentI,currentPage*3)
+            const post3data=res.data.slice(currentI*3,currentPage*3)
             setPost(post3data)
+            console.log("NowData",post3data)
             setTft(false)
+            setAfter(res.data.length%3)
+            console.log(after)
             setTotal(Math.ceil(res.data.length/3))
+            if(currentI===total){
+                const lastData=res.data.slice(currentI*3,after+currentI*3)
+                setPost(lastData)
+                console.log("NowData",lastData)
+            }
         }
         hi();
     },[currentPage])
@@ -32,23 +38,27 @@ const Paging=()=>{
         return (<p>just a moment</p>)
     }
     const goToP=(num)=> {
-        console.log(currentI,currentI+4)
-        if(num===total){
+        if(num===total){//todo 마지막에 남은갯수만큼 페이지 보이는거 안됨
             setGoB(false)
+            setGoF(true)
+            return(
+                setCurrentPage(num),
+                setCurrentI(num-1)
+            )
         }
-        if(num===1){
-            setGoF(false)
+        if(num===1){//첨으로 가는건 잘됨
             setGoB(true)
+            return(
+                setCurrentPage(1),
+                setCurrentI(0)
+            )
         }else{
             setGoF(true)
+            return(
+                setCurrentPage(num),
+                    setCurrentI(num-1)
+            )
         }
-        return(
-            setCurrentPage(num),
-            setCurrentI((prev)=>{
-                return prev+3
-            })
-        )
-
     }
 
 
@@ -58,7 +68,7 @@ const Paging=()=>{
                <div className="flllex">
                    <Link href="/"><a>Home</a></Link>
                    <br/>
-                   <Link href="/paging"><a>Paging</a></Link>
+                   <Link href="/scrolling"><a>scrolling</a></Link>
                </div>
            </div>
            <div className="img-zone">
@@ -84,7 +94,7 @@ const Paging=()=>{
            <div className="page-button">
                <ul>
                    {goF?<li onClick={()=>goToP(1)}>◁</li>:null}
-                   <PgButton numb={total} goToP={goToP} setCurrentPage={setCurrentPage} current={currentPage}/>
+                   <PgButton numb={total} goToP={goToP}  current={currentPage}/>
                    {goB?<li onClick={()=>goToP(total)}>▷</li>:null}
                </ul>
            </div>

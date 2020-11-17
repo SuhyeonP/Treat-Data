@@ -1,7 +1,8 @@
 import React, {useCallback,useEffect,useState} from 'react'
 
-const PgButton=({numb,current,setCurrentPage,goToP})=>{
+const PgButton=({numb,current,goToP})=>{
     const pageArr=[]
+
     for(let i=current;i<=numb;i++){
         pageArr.push(i)
     }
