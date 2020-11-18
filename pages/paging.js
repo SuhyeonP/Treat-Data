@@ -65,6 +65,7 @@ const Paging=()=>{
     return (
        <>
            <HeadLink/>
+           <p className="album-art">title위에 마우스를 올리면 앨범커버가 나와용~</p>
            <div className="img-zone">
                <img src="https://i.stack.imgur.com/DAwB5.png" id="selectImg"/>
            </div>

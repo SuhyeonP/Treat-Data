@@ -22,17 +22,6 @@ export default function Home() {
                                 <a>Scrolling</a>
                             </Link>
                         </li>
-                        <li>
-                            <Link href="/heart">
-                                <a>Using ServerSide+Scrolling</a>
-                            </Link>
-                        </li>
-                        <li>
-                            will be Gikal
-                        </li>
-                        <li>
-                            will be WebGame
-                        </li>
                     </ul>
                 </div>
             </div>
