@@ -1,4 +1,4 @@
-This changes to Ts [here](https://github.com/SuhyeonP/TTD)=>TS+CRA+REDUX+EMOTION
+This changes to Ts [here](http://suhyeon.shop)=>TS+CRA+REDUX+EMOTION
 ## This show how can I treat the data in Next+React(nonono this change to 🔼)
 
 I think you want to see my graphQL,     
